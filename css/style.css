@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap'); */
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 * {
@@ -10,14 +8,11 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Nunito', sans-serif;
 }
 
 :root {
-    /* --bg-color: #1f242d; */
     --bg-color: #191e29;
-    /* --second-bg-color: #323946; */
     --second-bg-color: #132d46;
     --text-color: #fff;
     --main-color: #01c38d;
@@ -141,7 +136,6 @@ span {
     background:var(--main-color);
     border-radius: 4rem;
     box-shadow: none;
-    /* box-shadow: 0 0 1rem var(--main-color); */
     font-size: 1.6rem;
     color: var(--second-bg-color);
     letter-spacing: .1rem;
@@ -150,7 +144,6 @@ span {
 }
 
 .btn:hover {
-    /* box-shadow: none; */
     box-shadow: 0 0 1rem var(--main-color);
 }
 
@@ -256,9 +249,7 @@ span {
 
 .portfolio-box img{
     height: 100%;
-    /* Ensure the image scales proportionally and doesn't overflow its container */
     max-width: 100%;
-    /* Ensure the image is centered horizontally */
     margin: 0 auto;
     transition: 0.5s ease;
 }
@@ -367,11 +358,11 @@ span {
 }
 
 .footer-text .copyright {
-    font-size: 1.4rem; /* Adjust the size as needed */
+    font-size: 1.4rem;
 }
 
 .footer-text .contact {
-    font-size: 1.6rem; /* Adjust the size as needed */
+    font-size: 1.6rem;
     color: var(--main-color);
 }
 
@@ -395,97 +386,138 @@ span {
 }
 
 
+/* Responsive */
 
-/* Base styles for larger screens */
-/* ... (your existing CSS code) ... */
-
-/* Media query for tablets */
-@media screen and (max-width: 768px) {
-    body {
-      font-size: 16px; /* Adjust the base font size for better readability on smaller screens */
+@media (max-width: 1200px){
+    html {
+        font-size: 55%;
     }
-  
+}
+
+@media (max-width: 991px){
     .header {
-      padding: 1.5rem 5%;
+        padding: 2rem 3%;
     }
-  
-    .navbar {
-      display: none; /* Hide the navigation links by default on tablets and show them when the menu icon is clicked */
+
+    section {
+        padding: 10rem 3% 2rem;
     }
-  
+
+    .skills{
+        padding-bottom: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .contact{
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px){
     #menu-icon {
-      display: block; /* Show the menu icon on tablets */
+        display: block;
     }
-  
-    .home {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .home-img {
-      width: 80%; /* Adjust the width of the image for better responsiveness */
-      margin-top: 2rem;
-    }
-  
-    .home-content h3 {
-      font-size: 2.5rem;
-    }
-  
-    .home-content h1 {
-      font-size: 4rem;
-    }
-  
-    .social-media a {
-      width: 3rem;
-      height: 3rem;
-      font-size: 1.5rem;
-      margin: 2rem 1rem 2rem 0;
-    }
-  }
-  
-  /* Media query for mobile devices */
-  @media screen and (max-width: 480px) {
-    .header {
-      padding: 1rem 5%;
-    }
-  
+
     .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         display: none;
-      flex-direction: column;
-      align-items: center;
-      display: ${(window.innerWidth <= 768) ? 'none' : 'flex'};
     }
-  
-    .navbar a {
-      margin: 1rem 0;
+
+    .navbar.active{
+        display: block;
     }
-  
-    #menu-icon {
-      display: block;
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
     }
-  
+
+    .home {
+        flex-direction: column;
+    }
+
     .home-content h3 {
-      font-size: 2rem;
+        font-size: 2.6rem;
     }
-  
+
     .home-content h1 {
-      font-size: 3.5rem;
+        font-size: 5rem;
     }
-  
-    .social-media a {
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 1.3rem;
-      margin: 1.5rem 1rem 1.5rem 0;
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
     }
-  
-    .home-img {
-      width: 90%;
+
+    .about {
+        flex-direction: column-reverse;
     }
-  
-    .about-img img,
-    .portfolio-box img {
-      width: 100%;
+
+    .about img{
+        width: 70vw;
+        margin-top: 4rem;
     }
-  }
-  
+
+    .skills {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px){
+    .portfolio-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 365px){
+    .home-img img{
+        width: 90vw;
+    }
+
+    .about-img img{
+        width: 90vw;
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+

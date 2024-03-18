@@ -1,3 +1,12 @@
+// ********toggle icon navbar********
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
 // ********scroll sections active link********
 
 let sections = document.querySelectorAll('section');
@@ -21,25 +30,11 @@ window.onscroll = () => {
     let header = document.querySelector('header');
 
     header.classList.toggle('sticky', window.scrollY > 100);
+
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+    
 };
-
-// Select the necessary elements
-let navbar = document.querySelector('header nav');
-let menuIcon = document.getElementById('menu-icon');
-
-// Update the display property based on the window width
-function updateDisplay() {
-    if (window.innerWidth <= 768) {
-        navbar.style.display = 'none';
-        menuIcon.style.display = 'block';
-    } else {
-        navbar.style.display = 'flex';
-        menuIcon.style.display = 'none';
-    }
-}
-
-// Call the function on page load and when the window is resized
-window.onload = window.onresize = updateDisplay;
 
 
 
